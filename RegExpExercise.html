@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*匹配结尾的数字
+		30CAC0040 取出40 3SFASDF92 取出92*/
+		// var str = '3SFASDF92';
+		// var reg = /\d+$/;
+		// console.log(reg.exec(str)[0]);
+
+		/*统一空格个数 字符串内如有空格，但是空格的数量可能不一致，通过正则将空格的个数统一变为一个。 
+		例如：蓝 色 理   想 变成：蓝 色 理 想 */
+		// var str = '蓝  色    理     想';
+		// var reg = /\s+/g;
+		// console.log(str.replace(reg, ' '));
+
+		/*判断字符串是不是由数字组成*/
+		// var str = '32.32';
+		// var reg = /\D/;
+		// console.log(!reg.test(str));
+		
+		/*区号必填为3-4位的数字，区号之后用“-”与电话号码连接 
+		电话号码为7-8位的数字 
+		分机号码为3-4位的数字，非必填，但若填写则以“-”与电话号码相连接 */
+		// var str = '122-3333323-5555';
+		// var reg = /^\d{3,4}-\d{7,8}(-\d{3,4})?$/;
+		// console.log(reg.test(str));
+		
+		/*手机号码正则表达式 正则验证手机号，忽略前面的0，支持130-139，150-159。忽略前面0之后判断它是11位的*/ 
+		// var str ='013459585950';
+		// var reg = /^0*(13|15)\d{9}$/;
+		// console.log(reg.test(str));
+		
+		/*使用正则表达式实现删除字符串中的空格：*/
+		// var  str='2      3 33   5';
+		// var reg = /\s+/g;
+		// console.log(str.replace(reg, ''));
+		
+		/*删除字符串两侧的空白字符。*/
+		// var str = '  2 34 4     ';
+		// var reg = /^\s+|\s+$/g;
+		// console.log(str.replace(reg, ''));
+		
+		/*限制文本框只能输入数字和小数点等等*/
+		// var str = '23.445.22';
+		// var reg = /[^\d\.]/;
+		// console.log(!reg.test(str));
+		
+		/*请问 怎么把这个字符串的小数点前面的字符替换为我自定义的字符串啊？ 例如：infomarket.php?id=197 替换为test.php?id=197 应该可以把第一个点“.”之前的所有单词字符替换为test就可以了。*/
+		// var str = 'infomarket.php?id=197';
+		// var reg = /^\w*/;
+		// console.log(str.replace(reg, 'test'));
+
+		/*只匹配中文的正则表达式*/
+		// var str = '方法第aaaa发333_.\n的';
+		// var reg =  /[\u4E00-\u9FA5\uf900-\ufa2d]/g;
+		// console.log(str.replace(reg, '哦'));
+		
+		/*返回字符串的中文字符个数*/
+		// var str = '33发发发2a分';
+		// var reg = /[^\u4E00-\u9FA5\uf900-\ufa2d]/g;
+		// console.log(str.replace(reg, '').length);
+		
+		/*正则表达式取得匹配IP地址前三段 192.168.118.101，192.168.118.72, 192.168.118.1都替换成：192.168.118 */
+		// var str = '192.168.118.1';
+		// var reg = /\.\d+$/;
+		// console.log(str.replace(reg, ''));
+		
+		/*匹配<ul>与<ul>之间的内容 <ul>safsf<ul>safsf</ul><ul>safsf</ul></ul> 
+		用正则可以得到 <ul>起到下个<ul> 之间的内容.*/
+		// var str = '<ul>safsf<ul>safsf</ul><ul>safsf</ul></ul>';
+		// var reg = /<ul>[\s\S]*?<ul>/i;
+		// console.log(reg.exec(str)[0]);
+		
+		/*用正则表达式获得文件名*/
+		// var str = 'c:\\images\\tupian\\006.jpg';
+		// var reg = /[^\\\/]*[\\\/]+/g;
+		// console.log(str.replace(reg, ''));
+		
+		/*将<IMG height="120" width="800" src="http://23.123.22.12/image/somepic.gif">
+		转换为：<IMG height="120" width="800" src="/image/somepic.gif">。 其中网址可能改变，例如http://localhost等等*/
+		// var str = 'http://23.123.22.12/image/somepic.gif';
+		// var reg = /http:\/\/[^\/]/;
+		// console.log(str.replace(reg, ''));
+		
+	</script>
+</body>
+</html>
